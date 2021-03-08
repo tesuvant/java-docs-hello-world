@@ -23,7 +23,7 @@ jobs:
         server-password: MAVEN_PASSWORD
     - name: Deploy to Azure Artifacts
       run: |
-        sed -i "s|<version>.*</version>|<version>$USER</version>|" pom.xml
+        sed -i "s|<version>.*</version>|<version>$GITHUB_RUN_NUMBER</version>|" pom.xml
         mvn deploy
       env:
         MAVEN_USERNAME: ${{ secrets.AA_USERNAME }}
