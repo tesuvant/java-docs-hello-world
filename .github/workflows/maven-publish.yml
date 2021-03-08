@@ -19,8 +19,10 @@ jobs:
       with:
         java-version: 1.8
         server-id: art
-        server-username: ARTIFACTORY_USERNAME
-        server-password: ARTIFACTORY_PASSWORD
-
+        server-username: MAVEN_USERNAME
+        server-password: MAVEN_PASSWORD
     - name: Deploy to Artifactory
       run: mvn deploy
+      env:
+        MAVEN_USERNAME: ${{ secrets.ARTIFACTORY_USERNAME }}
+        MAVEN_PASSWORD: ${{ secrets.ARTIFACTORY_PASSWORD }}
