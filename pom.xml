@@ -4,7 +4,7 @@
     <url>http://maven.apache.org</url>
     <groupId>org.tesuvant</groupId>
     <artifactId>helloazure</artifactId>
-    <version>1.0.1</version>
+    <version>1.0.17</version>
     <packaging>war</packaging>
     <name>helloazure</name>
     <properties>
@@ -26,9 +26,31 @@
             <artifactId>jstl</artifactId>
             <version>1.2</version>
         </dependency>
+        <dependency>
+          <groupId>org.apache.maven.enforcer</groupId>
+          <artifactId>enforcer-api</artifactId>
+          <version>3.0.0-M3</version>
+        </dependency>
+        <dependency>
+          <groupId>org.apache.maven.enforcer</groupId>
+          <artifactId>enforcer-rules</artifactId>
+          <version>3.0.0-M3</version>
+        </dependency>
+        <dependency>
+          <groupId>org.apache.maven.enforcer</groupId>
+          <artifactId>enforcer-rules</artifactId>
+          <version>3.0.0-M3</version>
+          <type>test-jar</type>
+          <scope>test</scope>
+        </dependency>
     </dependencies>
     <build>
         <plugins>
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>versions-maven-plugin</artifactId>
+                <version>2.2</version>
+            </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
@@ -46,9 +68,12 @@
             <plugin>            
               <groupId>org.apache.maven.plugins</groupId>
               <artifactId>maven-war-plugin</artifactId>
+              <version>3.0.0</version>
+<!--
               <configuration>
-                <webXml>./WebContent/WEB-INF/web.xml</webXml>        
+                <webXml>./WebContent/WEB-INF/web.xml</webXml>
               </configuration>
+-->
             </plugin>
         </plugins>
     </build>
