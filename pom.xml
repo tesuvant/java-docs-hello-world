@@ -52,4 +52,11 @@
             </plugin>
         </plugins>
     </build>
+    <distributionManagement>
+      <repository>
+        <id>art</id>
+        <name>helloazure-release</name>
+        <url>http://20.79.41.206/artifactory/mvnrepo/</url>
+       </repository>
+    </distributionManagement>
 </project>
