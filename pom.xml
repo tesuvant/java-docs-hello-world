@@ -53,10 +53,20 @@
         </plugins>
     </build>
     <distributionManagement>
-      <repository>
+      <snapshotRepository>
         <id>art</id>
         <name>helloazure-release</name>
         <url>http://20.79.41.206/artifactory/mvnrepo/</url>
-       </repository>
+       </snapshotRepository>
+       <repository>
+        <id>aa</id>
+        <url>https://pkgs.dev.azure.com/tesuvant/java-docs-hello-world/_packaging/myfeed/maven/v1</url>
+        <releases>
+          <enabled>true</enabled>
+        </releases>
+        <snapshots>
+          <enabled>true</enabled>
+        </snapshots>
+      </repository>
     </distributionManagement>
 </project>

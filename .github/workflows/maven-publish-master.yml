@@ -1,11 +1,11 @@
 # 1. build a package using mvn
-# 2. publish to Artifactory
+# 2. publish to Azure Artifacts
 
-name: maven-publish
+name: maven-publish-master
 
 on:
   push:
-    branches-ignore:
+    branches:
       - master
 
 jobs:
@@ -18,11 +18,11 @@ jobs:
       uses: actions/setup-java@v1
       with:
         java-version: 1.8
-        server-id: art
+        server-id: aa
         server-username: MAVEN_USERNAME
         server-password: MAVEN_PASSWORD
     - name: Deploy to Artifactory
       run: mvn deploy
       env:
-        MAVEN_USERNAME: ${{ secrets.ARTIFACTORY_USERNAME }}
-        MAVEN_PASSWORD: ${{ secrets.ARTIFACTORY_PASSWORD }}
+        MAVEN_USERNAME: ${{ secrets.AA_USERNAME }}
+        MAVEN_PASSWORD: ${{ secrets.AA_PASSWORD }}
