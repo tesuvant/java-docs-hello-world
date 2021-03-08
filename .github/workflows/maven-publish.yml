@@ -1,7 +1,7 @@
 # 1. build a package using mvn
 # 2. publish to Artifactory
 
-name: mvn pipeline
+name: maven-publish
 
 on:
   push:
