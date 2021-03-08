@@ -1,5 +1,4 @@
 # 1. build a package using mvn
-# 2. upload *.jar to Artifactory
 # 2. publish releases to GitHub packages
 
 name: mvn pipeline
@@ -10,7 +9,7 @@ on:
 
 jobs:
   build:
-    runs-on: ubuntu20.04
+    runs-on: ubuntu-latest
 
     steps:
     - uses: actions/checkout@v2
