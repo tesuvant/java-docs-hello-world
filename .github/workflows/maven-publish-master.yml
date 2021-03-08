@@ -21,7 +21,7 @@ jobs:
         server-id: aa
         server-username: MAVEN_USERNAME
         server-password: MAVEN_PASSWORD
-    - name: Deploy to Artifactory
+    - name: Deploy to Azure Artifacts
       run: mvn deploy
       env:
         MAVEN_USERNAME: ${{ secrets.AA_USERNAME }}
